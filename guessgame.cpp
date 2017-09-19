@@ -11,15 +11,18 @@ int main ()
     bool playing = true;
     while (playing){
       srand(time(NULL));
-      int answer = (rand()%10) + 1;
-      cout << answer << endl;
+      //set an int equal to a random number between 1 and 100, have user guess it
+      int answer = (rand()%101) + 1;
+      //cout << answer << endl;
       int guess = 0;
       int tries = 1;
       bool guessing = true;
       cout << "Guess a value!" << endl;
       while(guessing){
 	cin >> guess;
+	//check if user is correct
 	if (guess == answer){
+	  //check if user wants to play again
 	  cout << "Correct!" << endl;
 	  cout << "It took you " << tries << " guesses!" << endl;
 	  cout << "Would you like to play again?" << endl;
@@ -36,6 +39,7 @@ int main ()
 	    imlazyok = false;
 	  }
 	}
+	//check if it's higher or lower
 	else{
 	  if(guess > answer){
 	  cout << "That's too big!" << endl;
